@@ -25,4 +25,5 @@
 - node 16.14.0（对应版本问题）
 - 部署生成的项目在 gh-pages 分支（要使有作用，在.github中加一些配置文件）
 - 其实就是 在 gp-pages 分支 部署生成对应的 最外层 index.html 文件
+- 通过插件将public里面的文件上传到 对应分支中（还不是很能理解）
 - 固设置 github 存储库时的 Source 时要选择 gh-pages 分支
