@@ -19,20 +19,7 @@
 
 [^1]: master分支
 
-> #### 更改标题和说明
+> #### 启动项目注意点
 
-&nbsp;&nbsp;&nbsp; ➊ 站点标题默认为 `username.github.io`<br/>
-&nbsp;&nbsp;&nbsp; ➋ 可通过配置储存库中的 `_config.yml` 文件来修改<br/>
-&nbsp;&nbsp;&nbsp; ➌ 设置`title`修改标题，`description` 修改描述<br/>
-
-```yml
-title: watcher's blog
-subtitle: subtitle
-description: some description for website
-keywords: github pages blog
-author: watcher
-language: zh-CN
-theme: fluid
-```
-
-- node 16.14.0
+- node 16.14.0（对应版本问题）
+- 

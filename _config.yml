@@ -1,6 +1,94 @@
-title: watcher's blog
-description: blog to show some knowledge
-keywords: github pages blog
-author: watcher
-language: zh-CN
-theme: fluid
+# Hexo Configuration
+# Docs: https://hexo.io/docs/configuration.html
+# Source: https://github.com/hexojs/hexo/
+
+### 网站相关配置
+title: wathcer's blog         # 网站标题
+subtitle: blog for study      # 网站副标题
+description: study 前端知识点  # 描述，主要用于SEO
+keywords: blog css javascript # 关键词
+author: watcher               # 名称
+language: zh-CN               # 网站语言，使用不同主题设置不同的值
+timezone: Asia/Shanghai       # 网站时区，默认电脑时区
+
+### 主题配置
+# Themes: https://hexo.io/themes/
+theme: fluid          # 当前主题名称，为 false 时禁用主题
+theme_config:         # 主题的配置文件，在这里存放的配置会覆盖 _config.yml 中的主题配置
+
+### 网址相关参数配置
+url: http://WatcherOne.github.io      # 网址
+root: ''                              # 网站根目录
+permalink: :year/:month/:day/:title/  # 文章的`永久链接`格式
+permalink_defaults:                   # 永久链接中的各部分默认值
+pretty_urls:                          # 改变 permalink 的值来美化 URL
+  trailing_index: true                # 是否保留尾部的 index.html, 默认 ture，保留
+  trailing_html: true                 # 是否保留尾部的 .html，默认 true，保留
+
+### 目录相关参数配置
+source_dir: source            # 资源文件夹，用来存放内容，用户资源 
+public_dir: public            # 公共文件夹，用来存放生成的站点文件
+tag_dir: tags                 # 标签文件夹
+archive_dir: archives         # 归档文件夹
+category_dir: categories      # 分类文件夹
+code_dir: downloads/code      # Include code 文件夹，source_dir 下的子目录
+i18n_dir: :lang               # 国际化（i18n）文件夹
+skip_render:                  # 跳过指定文件的渲染，匹配到的文件将会不做改变的复制到public目录中
+                              # skip_render: '_css/**/*'
+
+### 文章相关配置
+new_post_name: :title.md      # 默认文件创建格式，可以设置  :year-:month-:day-:title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false          # 是否预览草稿，默认 false
+post_asset_folder: false      # 是否开启资源文件管理功能
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+### 分类 & 标签
+default_category: uncategorized    # 默认分类
+category_map:                      # 分类别名
+tag_map:                           # 标签别名
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+### 日期时间格式，Hexo使用 Moment.js 解析显示时间
+date_format: YYYY-MM-DD        # 日期格式
+time_format: HH:mm:ss          # 时间格式
+updated_option: 'mtime'        # 当 Front Matter 中没有指定 updated 时 updated 的取值
+                               # updated_option supports 'mtime', 'date', 'empty'
+
+### 分页配置
+per_page: 10              # 每页显示的文章量（0 = 关闭分页功能）默认值 10
+pagination_dir: page      # 分页目录
+
+### 部署部分设置
+# Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: ''
+
+### 包括或不报或目录和文件
+# include:/exclude: options only apply to the 'source/' folder
+# 通过设置 include/exclude 可以让 Hexo 进行处理或忽略某些目录和文件夹
+include:
+exclude:
+ignore:
