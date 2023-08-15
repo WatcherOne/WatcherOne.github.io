@@ -27,3 +27,4 @@
 - 其实就是 在 gp-pages 分支 部署生成对应的 最外层 index.html 文件
 - 通过插件将public里面的文件上传到 对应分支中（还不是很能理解）
 - 固设置 github 存储库时的 Source 时要选择 gh-pages 分支
+- Todo：应该是可以在 master 分支上直接部署到 gh-pages 分支的！！！
