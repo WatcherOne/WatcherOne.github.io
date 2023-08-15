@@ -13,7 +13,7 @@ timezone: Asia/Shanghai       # 网站时区，默认电脑时区
 
 ### 主题配置
 # Themes: https://hexo.io/themes/
-theme:                # 当前主题名称，为 false 时禁用主题
+theme: landscape      # 当前主题名称，为 false 时禁用主题
 theme_config:         # 主题的配置文件，在这里存放的配置会覆盖 _config.yml 中的主题配置
 
 ### 网址相关参数配置
@@ -84,7 +84,7 @@ pagination_dir: page      # 分页目录
 ### 部署部分设置
 # Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
+  # type: git
   # 安装插件 hexo-deployer-git 一键部署才有用
   # repo: https://github.com/WatcherOne/WatcherOne.github.io
   # branch: gh-pages
