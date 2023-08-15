@@ -1,5 +1,5 @@
 # WatcherOne.github.io
-some test to show myself blob
+some test to show myself blog
 
 ###### 创建 GitHub Pages 网站
 
@@ -26,3 +26,5 @@ author: watcher
 language: zh-CN
 theme: fluid
 ```
+
+- node 16.14.0
