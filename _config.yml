@@ -84,7 +84,10 @@ pagination_dir: page      # 分页目录
 ### 部署部分设置
 # Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  # 安装插件 hexo-deployer-git 一键部署才有用
+  # repo: https://github.com/WatcherOne/WatcherOne.github.io
+  # branch: gh-pages
 
 ### 包括或不报或目录和文件
 # include:/exclude: options only apply to the 'source/' folder
