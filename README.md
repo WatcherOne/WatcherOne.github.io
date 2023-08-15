@@ -15,7 +15,7 @@
 &nbsp;&nbsp;&nbsp; ➍ 然后在 `Branch`[^1] 下选择对应的分支 <br/>
 &nbsp;&nbsp;&nbsp; ➎ 访问 `username.github.io` 以查看新网站 <br/>
 &nbsp;&nbsp;&nbsp; ➏ 如果想通过 GitHub Pages 访问其它仓库，*则须将对应仓库按上述进行设置（无需改仓库名）*<br/>
-&nbsp;&nbsp;&nbsp;   - 对于访问某些仓库文件夹内的html时，需要将分支后 /(root) 换成 /docs【才能进入到文件夹里面】
+&nbsp;&nbsp;&nbsp; ➏ 对于访问某些仓库文件夹内的html时，需要将分支后 /(root) 换成 /docs【才能进入到文件夹里面】<br/>
 &nbsp;&nbsp;&nbsp; ➐ 访问 `username.github.io/newRepository` 以查看该仓库对应的网站<br/>
 
 [^1]: master分支

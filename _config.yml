@@ -17,7 +17,7 @@ theme: fluid          # 当前主题名称，为 false 时禁用主题
 theme_config:         # 主题的配置文件，在这里存放的配置会覆盖 _config.yml 中的主题配置
 
 ### 网址相关参数配置
-url: http://WatcherOne.github.io      # 网址，可以指定到 /<repository 的名字>
+url: http://WatcherOne.github.io      # 网址，可以指定到其它仓库 /<repository 的名字>
 root: ''                              # 网站根目录
 permalink: :year/:month/:day/:title/  # 文章的`永久链接`格式
 permalink_defaults:                   # 永久链接中的各部分默认值
