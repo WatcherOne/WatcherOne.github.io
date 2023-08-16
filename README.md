@@ -30,6 +30,12 @@
 - 通过插件将public里面的文件上传到 对应分支中
 - 固设置 github 存储库时的 Source 时要选择 gh-pages 分支
 
+- 常用到的错误：Failed to connect to github.com port 443: Timed out / Error: Spawn failed
+- 删除 .deploy_git
+- git config --global core.autocrlf false
+- hexo clean && hexo g && hexo d
+
 ****
 ##### Todo
 - [] 开启评论功能（）https://valine.js.org/ - 基于 https://leancloud.cn/  使用： gitalk 这个
+- [] 增加 Loading
