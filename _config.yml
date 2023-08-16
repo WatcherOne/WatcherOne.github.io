@@ -38,7 +38,7 @@ skip_render:                  # 跳过指定文件的渲染，匹配到的文件
 
 ### 文章相关配置
 new_post_name: :title.md      # 默认文件创建格式，可以设置  :year-:month-:day-:title.md
-default_layout: post
+default_layout: page
 titlecase: false
 external_link:
   enable: true

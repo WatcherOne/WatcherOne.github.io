@@ -24,7 +24,12 @@
 
 - node 16.14.0（对应版本问题）
 - 部署生成的项目在 gh-pages 分支（要使有作用，在.github中加一些配置文件）
+- 1. 配置文件在 .github/workflows/pages.yml
+- 2. 需要在 config.yml 增加 deploy 的配置
 - 其实就是 在 gp-pages 分支 部署生成对应的 最外层 index.html 文件
-- 通过插件将public里面的文件上传到 对应分支中（还不是很能理解）
+- 通过插件将public里面的文件上传到 对应分支中
 - 固设置 github 存储库时的 Source 时要选择 gh-pages 分支
-- Todo：应该是可以在 master 分支上直接部署到 gh-pages 分支的！！！
+
+****
+##### Todo
+- [] 开启评论功能（）https://valine.js.org/ - 基于 https://leancloud.cn/

@@ -1,3 +1,16 @@
+---
+title: 常用工具集
+# 文章摘要
+excerpt: 一些常用的网页在线工具，或者一些前端插件
+date: 2023-08-01 08:15:30
+index_img: /imgs/website/index_img.png
+banner_img: /imgs/website/banner_img.jpg
+banner_img_height: 35
+sticky: 1000
+tags:
+    - 工具
+---
+
 | 地址 | 描述 | 补充 |
 | --- | --- | --- |
 | [qr](https://link-to-qr.com/) | 一款在线制作二维码图 | 可以自定义url以及二维码样式颜色 |

@@ -1,0 +1,121 @@
+###############################
+# 主题配置设置
+###############################
+# 参考文档
+# https://hexo.fluid-dev.com/docs/guide/（文档）
+# https://hexo.fluid-dev.com/docs/icon/ (内置图标)
+
+# 暗色主题是否开启
+dark_mode:
+	enable: false
+	default: auto
+
+# 博客标题
+navbar:
+	blog_title: watcher
+
+# 首页打字机文字
+# 也可以通过 api 接口获取文字
+index:
+	slogan:
+		enable: true
+		text: Welcome To My Bolg World
+# 文章开启摘要，默认开启
+# 可自定义内容 在 md 文档中 设置 <!-- more -->
+# 在 这行注释的上面就是摘要，下面就是正文
+	auto_excerpt:
+		enable: true
+# 文章可配置置顶等效果
+# 在 md 文档中设置
+# ---
+# sticky: 100  # 值越大 越靠前，其它未设置，按默认排序
+# ---
+	post_sticky:
+		enable: true
+		icon: 'iconfont icon-top'
+	
+# 打字机特效，默认开启
+fun_features:
+	typing:
+		enable: true
+		typeSpeed: 50     # 打印速度
+		cursorChar: "_"   # 游标字符
+		loop: false       # 是否循环播放效果
+
+# 文章在首页的封面图
+# 如果md中没有配置，则默认使用这张 --- index_img:  ---
+post:
+	default_index_img:
+	# 日期/字数/阅读时长/阅读数
+	meta:
+		# 除了作者和阅读次数，其他功能都是默认开启的
+		author:
+			enable: true
+		date:
+			enable: true
+			format:
+		wordcount:  # 字数统计
+			enable: true
+			format: "{} 字"  # 显示的文本，{}是数字的占位符（必须包含)，下同
+		min2read:  # 阅读时间
+			enable: true
+			format: "{} 分钟"
+		views:  # 阅读次数
+			enable: false
+			source: "leancloud"
+			format: "{} 次"
+	# 脚注节标题
+	# [^1]: 参考资源1
+	footnote:
+		enable: true
+		header: '<h2>参考</h2>'  # 等同于手动写 `## 参考`
+
+favicon: /imgs/favicon.png
+
+# 关于页配置
+about:
+	# 个人头像
+	avatar: /imgs/avatar.jpg
+	name: watcher  # 个人姓名
+	intro: "总需要一点光进来"
+	icons:
+		- { class: 'iconfont icon-github-fill', link: 'https://github.com/WatcherOne', tip: 'GitHub' }
+		- { class: 'iconfont icon-douban-fill', link: 'https://www.douban.com/people/zhubo0905/?', tip: '豆瓣' }
+		- { class: 'iconfont icon-bilibili-fill', link: 'https://space.bilibili.com/206265099', tip: '哔哩哔哩' }
+
+# 标签配置
+# 标签的大小和颜色会根据标签下的文章数量变化
+tag:
+	tagcloud:
+		min_font: 18
+		max_font: 30
+		unit: px  # 字号单位
+		start_color: "#BBBBEE"
+		end_color: "#337ab7"   # hover-color
+
+# 页面的参数配置默认设置（感觉不启作用）
+# 也可以在 front-matter 中设置
+page:
+	banner_img:              # 文章顶部背景
+	banner_img_height: 30    # 高度
+	banner_mask_alpha: 0.3   # 透明度
+
+# 懒加载，默认开启，可以修改加载 Loading 图片
+# lazyload:
+	# enable: true
+	# loading_img: /img/loading.gif   # 加载占位图片
+	# onlypost: false                 # 为 true 时，懒加载仅在文章页生效
+	# offset_factor: 2
+
+# 将所有请求强制升级为 HTTPS
+force_https: true
+
+# 可以自定义引入 JS/CSS/HTML
+
+# 展示 PV 与 UV 统计
+footer:
+  statistics:
+    enable: true
+    source: busuanzi
+    pv_format: 总访问量 {} 次
+    uv_format: 总访客数 {} 人

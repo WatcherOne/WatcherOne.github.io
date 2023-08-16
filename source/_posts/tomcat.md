@@ -1,3 +1,9 @@
+---
+tags:
+    - yum
+    - wget
+---
+
 1. 去 Apache 官网下载 压缩包（或 [tomcat-8.5](http://39.106.78.182/download/package/apache-tomcat-8.5.88.tar.gz)）
 2. 将源码包上传到服务器上并解压
 
