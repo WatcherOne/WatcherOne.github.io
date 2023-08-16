@@ -1,6 +1,5 @@
 ---
 layout: about
-banner_img_height: 25
 ---
 
 <style>

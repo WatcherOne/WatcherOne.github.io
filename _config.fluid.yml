@@ -4,6 +4,7 @@
 # 参考文档
 # https://hexo.fluid-dev.com/docs/guide/（文档）
 # https://hexo.fluid-dev.com/docs/icon/ (内置图标)
+# https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml (配置文档注释)
 
 # 暗色主题是否开启
 dark_mode:
@@ -14,9 +15,19 @@ dark_mode:
 navbar:
 	blog_title: watcher
 
+favicon: /imgs/favicon.png
+apple_touch_icon: /imgs/favicon.png
+
+# 首屏图片配置
+banner:
+  # 视差滚动效果
+  parallax: true
+  width_height_ratio: 1.0
+
 # 首页打字机文字
 # 也可以通过 api 接口获取文字
 index:
+  banner_img: /imgs/index_banner.jpg
 	slogan:
 		enable: true
 		text: Welcome To My Bolg World
@@ -41,11 +52,17 @@ fun_features:
 		typeSpeed: 50     # 打印速度
 		cursorChar: "_"   # 游标字符
 		loop: false       # 是否循环播放效果
+    scope: [home]     # 指定页面开启，不指定，全部 |home|post|tag|page|404...
 
 # 文章在首页的封面图
 # 如果md中没有配置，则默认使用这张 --- index_img:  ---
 post:
-	default_index_img:
+	default_index_img: /imgs/index_img.png
+  # 页面的参数配置默认设置
+  # 也可以在 front-matter 中设置
+	banner_img: /imgs/banner_img.png  # 文章顶部背景
+	banner_img_height: 50    # 高度
+	banner_mask_alpha: 0.3   # 透明度
 	# 日期/字数/阅读时长/阅读数
 	meta:
 		# 除了作者和阅读次数，其他功能都是默认开启的
@@ -64,17 +81,31 @@ post:
 			enable: false
 			source: "leancloud"
 			format: "{} 次"
-	# 脚注节标题
+	# 文章开头更新时间
+  updated:
+    enable: true
+  # 开启侧边栏文章目录
+  # 会默认选择h1/h2/h3/h4/h5/h6节点作为标题
+  # 默认在右边
+  toc:
+    enable: true
+  # 版权声明，默认显示
+  copyright:
+    enable: false
+    update_date:
+      enable: true
+
+  # 脚注节标题
 	# [^1]: 参考资源1
 	footnote:
 		enable: true
 		header: '<h2>参考</h2>'  # 等同于手动写 `## 参考`
 
-favicon: /imgs/favicon.png
-
 # 关于页配置
 about:
 	# 个人头像
+  banner_img: /imgs/banner_img.png
+  banner_img_height: 25
 	avatar: /imgs/avatar.jpg
 	name: watcher  # 个人姓名
 	intro: "总需要一点光进来"
@@ -83,22 +114,28 @@ about:
 		- { class: 'iconfont icon-douban-fill', link: 'https://www.douban.com/people/zhubo0905/?', tip: '豆瓣' }
 		- { class: 'iconfont icon-bilibili-fill', link: 'https://space.bilibili.com/206265099', tip: '哔哩哔哩' }
 
-# 标签配置
+# 标签页配置
 # 标签的大小和颜色会根据标签下的文章数量变化
 tag:
-	tagcloud:
-		min_font: 18
-		max_font: 30
-		unit: px  # 字号单位
-		start_color: "#BBBBEE"
-		end_color: "#337ab7"   # hover-color
+	banner_img: /imgs/banner_img.png
+	banner_img_height: 40
+  tagcloud:
+    min_font: 18
+    max_font: 30
+    unit: px  # 字号单位
+    start_color: "#BBBBEE"
+    end_color: "#337ab7"   # hover-color
 
-# 页面的参数配置默认设置（感觉不启作用）
-# 也可以在 front-matter 中设置
-page:
-	banner_img:              # 文章顶部背景
-	banner_img_height: 30    # 高度
-	banner_mask_alpha: 0.3   # 透明度
+category:
+  banner_img: /imgs/banner_img.png
+	banner_img_height: 40
+
+archive:
+  banner_img: /imgs/banner_img.png
+	banner_img_height: 40
+
+page404:
+  enable: true
 
 # 懒加载，默认开启，可以修改加载 Loading 图片
 # lazyload:
@@ -119,3 +156,5 @@ footer:
     source: busuanzi
     pv_format: 总访问量 {} 次
     uv_format: 总访客数 {} 人
+  beian:
+    enable: true  # 国内大陆服务器的备案信息

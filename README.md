@@ -32,4 +32,4 @@
 
 ****
 ##### Todo
-- [] 开启评论功能（）https://valine.js.org/ - 基于 https://leancloud.cn/
+- [] 开启评论功能（）https://valine.js.org/ - 基于 https://leancloud.cn/  使用： gitalk 这个
