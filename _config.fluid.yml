@@ -99,7 +99,6 @@ post:
 	# [^1]: 参考资源1
 	footnote:
 		enable: true
-		header: '<h2>参考</h2>'  # 等同于手动写 `## 参考`
 
 # 关于页配置
 about:
