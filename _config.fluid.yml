@@ -99,6 +99,9 @@ post:
 	# [^1]: 参考资源1
 	footnote:
 		enable: true
+  comments:
+    enable: true
+    type: gitalk
 
 # 关于页配置
 about:
@@ -157,3 +160,13 @@ footer:
     uv_format: 总访客数 {} 人
   beian:
     enable: true  # 国内大陆服务器的备案信息
+
+gitalk:
+  enable: true
+  repo: WatcherOne.github.io
+  owner: WatcherOne
+  clientId: 3e6a50fe69c43e59de05
+  clientSecret: 829d07fcd6cc13e98928a3dd207758cda7c4facb
+  admin: ['WatcherOne']
+  id: location.pathname
+  distraction_free_mode: true

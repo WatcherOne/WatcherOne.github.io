@@ -37,3 +37,22 @@ table th:nth-of-type(3) {
 | [openAI-chat](https://chat.openai.com) | chatGPT-chat网站 | 人工智能对话，需要翻墙 |
 | [openAI-doc](https://platform.openai.com) | openAI平台文档说明 | 提供用户登录等API文档，常用示例说明，需要翻墙+无痕 |
 | [openAI-api](https://api.openai.com) | api服务地址 | 提供后端接口的服务器，需要翻墙+无痕 |
+
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+<script>
+const gitalk = new Gitalk({
+    clientID: '3e6a50fe69c43e59de05',
+    clientSecret: '829d07fcd6cc13e98928a3dd207758cda7c4facb',
+    repo: 'WatcherOne.github.io',
+    owner: 'WatcherOne',
+    admin: ['WatcherOne'],
+    id: location.pathname,
+    distractionFreeMode: false
+})
+
+gitalk.render('gitalk-container')
+</script>

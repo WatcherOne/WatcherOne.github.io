@@ -41,3 +41,22 @@ comment: false # 开启评论，boolean 来控制开关，comment: 'valine' 来�
 
 组图：将多张图片按一定布局组合显示
 -->
+
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+<script>
+const gitalk = new Gitalk({
+    clientID: '3e6a50fe69c43e59de05',
+    clientSecret: '829d07fcd6cc13e98928a3dd207758cda7c4facb',
+    repo: 'WatcherOne.github.io',
+    owner: 'WatcherOne',
+    admin: ['WatcherOne'],
+    id: location.pathname,
+    distractionFreeMode: false
+})
+
+gitalk.render('gitalk-container')
+</script>
