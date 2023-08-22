@@ -139,51 +139,80 @@ category:
 
 <p class="note note-success">伪类选择器</p>
 
-- <span class="text-mark">:link</span>         选择未被访问的链接
-- <span class="text-mark">:visited</span>      选择已被访问的链接
-- <span class="text-mark">:active</span>       选择活动链接
-- <span class="text-mark">:hover</span>        选择鼠标指针浮动在上面的元素
-- <span class="text-mark">:focus</span>        选择具有焦点的元素
-- <span class="text-mark">:first-child</span>  选择父元素的首个子元素（本身元素必须是第一个元素）
-
 | 伪类选择器 |  描述 |
-| :---:  |  ------  |
+| ---  |  ------  |
 | <span class="text-mark">:link</span>    | 选择未被访问的链接 |
 | <span class="text-mark">:visited</span> | 选择已被访问的链接 |
 | <span class="text-mark">:active</span>  | 选择活动链接 |
 | <span class="text-mark">:hover</span>   | 选择鼠标指针浮动在上面的元素 |
 | <span class="text-mark">:focus</span>   | 选择具有焦点的元素 |
 | <span class="text-mark">:first-child</span>  | 选择父元素的首个子元素（本身元素必须是第一个元素） |
-| <span class="text-star">*</span> <span class="text-mark">:checked</span> |  |
-| <span class="text-star">*</span> <span class="text-mark">:disabled</span> |  |
-| <span class="text-star">*</span> <span class="text-mark">:enabled</span> |  |
-| <span class="text-star">*</span> <span class="text-mark">:empty</span> |  |
-| <span class="text-star">*</span> <span class="text-mark">:root</span> |  |
-| <span class="text-star">*</span> <span class="text-mark">:not(selector)</span> |  |
-| <span class="text-star">*</span> <span class="text-mark"></span> |  |
-| <span class="text-star">*</span> <span class="text-mark"></span> |  |
-| <span class="text-star">*</span> <span class="text-mark"></span> |  |
-·          选择选中的元素
-·         选择被禁用的元素
-·          选择可用的元素（与disabled互斥的，默认的输入框就是enabled）
-*            选择没有子元素的元素（子元素包括内容为空）
-·             表示文档根元素，相当于全局属性，常用来定义CSS变量
-·    选择与 selector 不匹配的所有元素，有用++
+| <span class="text-star">*</span> <span class="text-mark">:checked</span> | 选择选中的元素 |
+| <span class="text-star">*</span> <span class="text-mark">:disabled</span> | 选择被禁用的元素 |
+| <span class="text-star">*</span> <span class="text-mark">:enabled</span> | 选择可用的元素（与disabled互斥的，默认的输入框就是enabled） |
+| <span class="text-star">*</span> <span class="text-mark">:empty</span> | 选择没有子元素的元素（子元素包括内容为空） |
+| <span class="text-star">*</span> <span class="text-mark">:root</span> | 表示文档根元素，相当于全局属性，常用来定义CSS变量 |
+| <span class="text-star">*</span> <span class="text-mark">:not(selector)</span> | 选择与 selector 不匹配的所有元素，有用++ |
+| <span class="text-star">*</span> <span class="text-mark">:first-of-type</span> | 选择父元素的第一个同种类型的子元素（本身元素必须是同种类型中的第一个元素） |
+| of-type | 以下所指的同种类型一定指的是<span class="text-highlight">标签</span>元素同种类型！！ |
+| <span class="text-star">*</span> <span class="text-mark">:last-child</span> | 选择父元素的最后一个子元素（最后一个子元素必须是当前元素） |
+| <span class="text-star">*</span> <span class="text-mark">:last-of-type</span> | 选择父元素的同种类型的最后一个子元素 |
+| <span class="text-star">*</span> <span class="text-mark">:nth-child(n)</span> | 选择元素在一组同级中的位置匹配元素（n从1开始的正整数，an + b, 可以 odd even） |
+| <span class="text-star">*</span> <span class="text-mark">:nth-of-type(n)</span> | 选择元素在一组同级中相类型元素的匹配位置 |
+| <span class="text-star">*</span> <span class="text-mark">:only-child</span> | 选择没有任何兄弟的元素 |
+| <span class="text-star">*</span> <span class="text-mark">:only-of-type</span> | 选择没有同种类型兄弟元素的元素 |   
 
-        * of-type:::  ！！对于标签和className是不同含义的
-        * type        ！！类型一定指的是标签
-        · :first-of-type   选择父元素的第一个同种类型的子元素（本身元素必须是同种类型中的第一个元素）
-        · :last-child      选择父元素的最后一个子元素（最后一个子元素必须是当前元素）
-        · :last-of-type    选择父元素的同种类型的最后一个子元素
-        · :nth-child(n)    选择元素在一组同级中的位置匹配元素（n从1开始的正整数，an + b, 可以 odd even）
-        . :nth-of-type(n)  选择元素在一组同级中相类型元素的匹配位置
-        · :only-child      选择没有任何兄弟的元素
-        · :only-of-type    选择没有同类型兄弟元素的元素
+<p class="note note-danger">selector:first-child</p>
+
+- 选择当前元素的父元素中的第一个`当前`元素
+- selector作为目标元素，去寻找他的父元素（可以在前面定义指定的父元素，未指定则往上找父元素即可） 
+- 并且 selector 是作为他父元素的第一个子元素
+- 区别 :first-of-type 选择当前元素的父元素中 同种类型的第一个`当前`子元素
+
+<p class="note note-danger">selector:nth-child(n)</p>
+
+- 选择当前元素的同级所有元素，n匹配对应的第n个元素位置
+- 区别 :nth-of-type(n) 选择当前元素同级的`相同类型`的元素
+- n 匹配对应相同类型元素中第n个相同元素位置
+
+<p class="note note-danger">selector:first-child & selector:first-of-type</p>
+
+- 伪元素前面写 <span class="text-mark">tagName</span> 和 <span class="text-mark">其他选择器</span> 含义完全不同
+```css
+:first-of-type
+/* 从所有子元素中查找第一个出现某种类型的，同一个父元素可能同时命中多次 */
+/*（因为没有限定类型，所以可以是第一个 div、第一个 span、第一个 P 只针对标签）*/
+
+tagName:first-of-type
+/* 从所有子元素中查找第一个tagName，同一个父元素最多只能命中一次 */
+
+.className:first-of-type 
+/* 从所有class是className的子元素中查找第一次出现的某种元素类型 */
+/* 例如第一个 div、第一个 span、第一个 p, 同一个父元素可能命中多次 */
+/* 特别注意，并不是从子元素中查找第一个.className */
+/* 找出的 class 为 className 的所有子元素找第一次（是从所有子元素中找，不是className的元素！！！） */
+/* 从所有元素找同种类型，不管 是不是 className值的元素！！！ */
+```
+
+### CSS隐藏元素方式
+
+| 方式 | 描述 |
+| ---- | ---- |
+| display: none | 元素在页面上消失，本身占有空间被其它元素占有，会导致`重排和重绘`；元素不可见，不占空间，无法响应事件 |
+| visibility: hidden | 元素仅仅隐藏，DOM仍存在，只是不可见状态，`不会重排，会重绘`；元素不可见，占空间，无法响应事件 |
+| opacity: 0 | 元素透明度为0，人眼不可见，不会重排，`一般会引发重绘`，透明后其子元素都会透明；元素不可见，占空间，`可响应事件` |
+| width/height=0 | 元素盒子模型为0；元素不可见，不占空间，无法响应事件 |
+| position:absolute | 将元素脱离文档流移出可视区域；元素不可见，不影响布局 |
+| clip-path | 通过裁剪的方式；元素不可见，占空间，无法响应事件 |
 
 
 ### 响应式布局的理解 Todo
 ### 水平垂直居中的方法 Todo
 ### 多栏布局，固定与自适应 Todo
+### 单行/多行文本溢出 Todo
+### CSS画三角形（原理） Todo
+### 视差滚动 Todo
+### 3D效果 Todo
 
 <div id="gitalk-container"></div>
 
