@@ -214,6 +214,11 @@ tagName:first-of-type
 ### 视差滚动 Todo
 ### 3D效果 Todo
 
+### 常见问题
+
+1. backgroud-position: x% y%; // 
+2. border: none 与 border: 0 的区别
+
 <div id="gitalk-container"></div>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
