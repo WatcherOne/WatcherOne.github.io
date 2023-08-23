@@ -216,8 +216,9 @@ tagName:first-of-type
 
 ### 常见问题
 
-1. backgroud-position: x% y%; // 
+1. backgroud-position: x% y%; // 有待考察
 2. border: none 与 border: 0 的区别
+
 
 <div id="gitalk-container"></div>
 
