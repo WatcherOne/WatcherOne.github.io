@@ -94,3 +94,7 @@ hexo deploy  # 部署项目前，必须要生成文件
 hexo deploy --generate   # 生成完毕后自动部署
 hexo d -g    # 简写
 ```
+
+> 如果没有发现 hexo 指令
+1. 全局下载 hexo-cli
+2. 执行命令 npx hexo d -g
