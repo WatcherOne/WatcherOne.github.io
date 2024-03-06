@@ -35,11 +35,37 @@ table th:nth-of-type(3) {
 | [正则表达式](https://ihateregex.io/) | 一个提供常用正则表达式的网站 | 可以修改正则来验证 |
 | [css-dev](https://cssbattle.dev/) | 一个针对CSS爱好者的代码高尔夫游戏网站 | 以用最小的CSS代码直观地还原题目 |
 
-> 插件类
+> 工具插件类
 
 | 地址   | 描述 | 补充 |
 | :---: | ------ | -------- |
 | [print](https://printjs.crabbly.com/) | 一款打印pdf插件 | 未使用过 |
+
+> chrome浏览器插件
+
+| 地址   | 描述 | 补充 |
+| :---: | ------ | -------- |
+|  |  | 允许用户自定义脚本 |
+
+<table>
+    <thead>
+        <tr>
+            <th>地址</th>
+            <th>描述</th>
+            <th>补充</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>[Tampermonkey](https://printjs.crabbly.com/)</td>
+            <td>油猴,用于安装与管理脚本的插件</td>
+            <td>允许用户自定义脚本</td>
+        <tr>
+        <tr>
+            <td colspan="3">[全网VIP视频](chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=1518a3ca-e7ed-4c49-8bef-362959e2d5fc)</td>
+        </tr>
+    </tbody>
+</table>
 
 > 娱乐类
 
