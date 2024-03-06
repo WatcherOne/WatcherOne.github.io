@@ -53,7 +53,7 @@ table th:nth-of-type(3) {
     </thead>
     <tbody>
         <tr>
-            <td><a href="https://printjs.crabbly.com/">Tampermonkey</a></td>
+            <td><a href="https://chromewebstore.google.com/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a></td>
             <td>油猴,一个浏览器扩展,用于安装与执行脚本的插件;脚本管理器</td>
             <td>允许用户自定义脚本</td>
         <tr>
@@ -70,17 +70,17 @@ table th:nth-of-type(3) {
         <tr>
             <td></td>
             <td><span style="color:lightblue">常用脚本推荐</span></td>
-            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=1518a3ca-e7ed-4c49-8bef-362959e2d5fc">全网VIP视频去广告</a></td>
+            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=1518a3ca-e7ed-4c49-8bef-362959e2d5fc" target="_blank">全网VIP视频去广告</a></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
-            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=9638c9d2-709d-43f4-b575-c927aef3a14c">解除文本选中限制</a></td>
+            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=9638c9d2-709d-43f4-b575-c927aef3a14c" target="_blank">解除文本选中限制</a></td>
         </tr>
         <tr>
             <td></td>
             <td></td>
-            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=7a2f6acd-501f-4388-9d19-a83483a2f4ec">解除B站区域限制</a></td>
+            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=7a2f6acd-501f-4388-9d19-a83483a2f4ec" target="_blank">解除B站区域限制</a></td>
         </tr>
     </tbody>
 </table>
