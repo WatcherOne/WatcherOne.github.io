@@ -43,10 +43,6 @@ table th:nth-of-type(3) {
 
 > chrome浏览器插件
 
-| 地址   | 描述 | 补充 |
-| :---: | ------ | -------- |
-|  |  | 允许用户自定义脚本 |
-
 <table>
     <thead>
         <tr>
@@ -57,12 +53,22 @@ table th:nth-of-type(3) {
     </thead>
     <tbody>
         <tr>
-            <td>[Tampermonkey](https://printjs.crabbly.com/)</td>
+            <td><a href="https://printjs.crabbly.com/">Tampermonkey</a></td>
             <td>油猴,用于安装与管理脚本的插件</td>
             <td>允许用户自定义脚本</td>
         <tr>
         <tr>
-            <td colspan="3">[全网VIP视频](chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=1518a3ca-e7ed-4c49-8bef-362959e2d5fc)</td>
+            <td></td>
+            <td>Greay Fox</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>常用插件推荐</td>
+            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=1518a3ca-e7ed-4c49-8bef-362959e2d5fc">全网VIP视频</a></td>
         </tr>
     </tbody>
 </table>
