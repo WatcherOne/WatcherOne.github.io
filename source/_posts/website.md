@@ -39,7 +39,7 @@ table th:nth-of-type(3) {
 
 | 地址   | 描述 | 补充 |
 | :---: | ------ | -------- |
-| [print](https://printjs.crabbly.com/) | 一款打印pdf插件 | 未使用过 |
+| [print](https://printjs.crabbly.com/) | 一款打印pdf的插件 | 未使用过 |
 
 > chrome浏览器插件
 
@@ -54,21 +54,33 @@ table th:nth-of-type(3) {
     <tbody>
         <tr>
             <td><a href="https://printjs.crabbly.com/">Tampermonkey</a></td>
-            <td>油猴,用于安装与管理脚本的插件</td>
+            <td>油猴,一个浏览器扩展,用于安装与执行脚本的插件;脚本管理器</td>
             <td>允许用户自定义脚本</td>
         <tr>
         <tr>
             <td></td>
-            <td>Greay Fox</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td colspan="3"></td>
+            <td><a href="https://greasyfork.org/zh-CN/scripts">Greasy Fork</a></td>
+            <td>脚本仓库,拥有大量用户脚本,提供脚本搜索等功能</td>
         </tr>
         <tr>
             <td></td>
-            <td>常用插件推荐</td>
-            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=1518a3ca-e7ed-4c49-8bef-362959e2d5fc">全网VIP视频</a></td>
+            <td><a href="https://openuserjs.org/">OpenUserJS</a></td>
+            <td>另一个大型的用户脚本社区,提供丰富脚本资源,强调社区参与用户提交自己的脚本</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><span style="color:lightblue">常用脚本推荐</span></td>
+            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=1518a3ca-e7ed-4c49-8bef-362959e2d5fc">全网VIP视频去广告</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=9638c9d2-709d-43f4-b575-c927aef3a14c">解除文本选中限制</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=7a2f6acd-501f-4388-9d19-a83483a2f4ec">解除B站区域限制</a></td>
         </tr>
     </tbody>
 </table>
