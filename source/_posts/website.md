@@ -32,8 +32,8 @@ table th:nth-of-type(3) {
 | [flex](https://the-echoplex.net/flexyboxes/) | 一款在线可视化Flex布局效果实时展示 | 利于新手学习 |
 | [svg插图](https://undraw.co/) | 一个提供svg插图素材的网站 | 用于下载一些svg格式的素材 |
 | [API](https://overapi.com/) | 一个汇聚了大量开发语言和工具的API | 用于快速查看API文档,只有常用的 |
-| [正则表达式](https://ihateregex.io/) | 提供常用正则表达式的网站 | 可以修改正则来验证 |
-| [css-dev](https://cssbattle.dev/) | 一个CSS竞争性游戏类学习网站 | 通过css还原题目,具有竞争性 |
+| [正则表达式](https://ihateregex.io/) | 一个提供常用正则表达式的网站 | 可以修改正则来验证 |
+| [css-dev](https://cssbattle.dev/) | 一个针对CSS爱好者的代码高尔夫游戏网站 | 以用最小的CSS代码直观地还原题目 |
 
 > 插件类
 
@@ -43,6 +43,8 @@ table th:nth-of-type(3) {
 
 > 娱乐类
 
+| 地址   | 描述 | 补充 |
+| :---: | ------ | -------- |
 | [虚拟号码](https://sms-activate.org) | 外网虚拟号码服务平台 | 通过虚拟号码接收短信验证码 [详细](https://WatcherOne.github.io/2023/08/01/websiteVirtualPhone) |
 | [盗版游戏A](https://byrutdb.org) | `Byrutor`盗版游戏下载 | 一款来自俄罗斯的破解游戏资源网站 [详细](https://WatcherOne.github.io/2023/08/01/websiteGameALoad) |
 | [盗版游戏B](https://rutracker.net) | `RuTracker`盗版游戏下载 | 俄罗斯此前最大的的盗版资源下载网站 [详细](https://WatcherOne.github.io/2023/08/01/websiteGameBLoad) |
