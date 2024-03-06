@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>CSS知识积累</title>
+    <link href="/2023/08/22/css/"/>
+    <url>/2023/08/22/css/</url>
+    
+    <content type="html"><![CDATA[<style>.text-highlight {    color: #e19832;}.text-keynote {    color: #333;    font-weight: bold;}.text-mark {    background-color: #efd4af;    padding: 0 0.4em 0.2em;    font-size: 90%;    border-radius: 3px;}.text-star {    color: #e53030;    font-size: 150%;    font-weight: bold;    vertical-align: middle;    line-height: 20px;}.content-box {    border: 1px solid #dfe2e5;    background-color: #f6f8fa;    padding: 10px 10px 10px 20px;    margin-bottom: 15px;    border-radius: 5px;}.content-box .order {    color: #428bca;    font-size: 18px;    font-weight: bold;}.post-content .markdown-body blockquote {    background-color: #f6f6f6;    padding: 0.3em 1em;    border-left-color: #428bca;    font-size: 95%;}</style><h3 id="盒子模型的理解"><a href="#盒子模型的理解" class="headerlink" title="盒子模型的理解"></a>盒子模型的理解</h3><style>.markdown-body table:first-of-type th:first-of-type {    min-width: 120px;}</style><div class="content-box">    <span class="order">1.</span> 当对一个文档进行布局时，浏览器的渲染引擎会根据标准之一的CSS基础框盒模型<br/>    <span class="order">2.</span> 将所有元素表示为一个个<span class="text-highlight">矩形的盒子</span><br/>    <span class="order">3.</span> 标准包括：<span class="text-keynote">标准模型</span> + <span class="text-keynote">怪异模型</span><br/>    <span class="order">4.</span> 盒子由:         <span class="text-mark">content</span> +        <span class="text-mark">padding</span> +        <span class="text-mark">border</span> +        <span class="text-mark">margin</span> 组成<br/></div><ul><li>padding：内边距，清除内容周围的区域，取值<strong>不能为负值</strong>！<br/></li><li>margin:  外边距，在元素外创建额外的空白，<strong>可以为负值</strong>！</li></ul><p class="note note-success">标准模型：W3C标准盒子模型，浏览器默认的盒子模型</p><ul><li>盒子总宽度 &#x3D; width + padding + border + margin</li><li>盒子总高度 &#x3D; height + padding + border + margin</li></ul><p class="note note-success">怪异模型：IE怪异盒子模型</p><ul><li>盒子总宽度 &#x3D; width + margin</li><li>盒子总高度 &#x3D; height + margin</li><li>也就是说 width&#x2F;height 包含了 padding 和 border 值</li></ul><p class="note note-success">box-sizing属性</p><blockquote><p>定义了引擎应该如何计算一个元素的总宽度和总高度</p></blockquote><table><thead><tr><th align="center">属性值</th><th>描述</th></tr></thead><tbody><tr><td align="center">content-box</td><td>默认值，元素 <code>width/height 不包含 padding,border</code> 与标准盒子模型表现一致</td></tr><tr><td align="center">border-box</td><td>元素 <code>width/height 包含 padding,border</code> 与怪异盒子模型表现一致</td></tr><tr><td align="center">inherit</td><td>指定 box-sizing 属性值 从父元素继承</td></tr></tbody></table><h3 id="BFC的理解-Todo"><a href="#BFC的理解-Todo" class="headerlink" title="BFC的理解 Todo"></a>BFC的理解 Todo</h3><blockquote><p>Block Formatting Context: 块级格式化上下文，它是页面上的一块渲染区域，并且有一套自己的渲染规则</p></blockquote><div class="content-box">    <span class="order">1.</span> 内部的盒子会在垂直方向上一个接一个的放置<br/>    <span class="order">2.</span> 对于同一个BFC的俩个相邻的盒子的margin会发生重叠，与方向无关<br/>    <span class="order">3.</span> 每个元素的左外边距与包含块的左边界相接触（从左到右）<br/>    <span class="order">4.</span> BFC区域不会与float的元素区域重叠<br/>    <span class="order">5.</span> 计算BFC的高度时，浮动子元素也参与计算<br/>    <span class="order">6.</span> BFC就是页面上一个隔离的独立容器，容器内的子元素不会影响到外面的元素！<br/></div><blockquote><p>BFC 目的就是形成一个相对于外界完全独立的空间，让内部子元素不会影响到外部的元素</p></blockquote><p class="note note-success">触发条件</p><ul><li>A…</li></ul><p class="note note-success">应用场景</p><ul><li>防止 margin 重叠（塌陷）</li><li>清除内部浮动（在BFC中计算高度时，浮动元素也会参入则浮动元素就不会重叠）</li></ul><h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><blockquote><p>CSS选择器是 CSS规则的第一部分<br><span class="text-star">*</span> 表示 <code>CSS3</code> 新增的</p></blockquote><p class="note note-success">基础选择器</p><ul><li><span class="text-mark">ID选择器</span></li><li><span class="text-mark">类选择器</span></li><li><span class="text-mark">标签选择器</span></li><li><span class="text-mark">后代选择器</span>（#box div）：选择ID为box元素的内部所有div元素</li><li><span class="text-mark">子选择器</span>（#box &gt; div）：选择父元素为ID为box元素的所有div元素（只有父子关系）</li><li><span class="text-mark">相邻同胞选择器</span>（#box + .two）：选择紧接ID为box元素之后的一个 .two 元素（相邻的）</li><li><span class="text-mark">群组选择器</span>（div,p）：选择div，p的所有元素</li><li><span class="text-star">*</span> <span class="text-mark">层次选择器 &#x2F; 通用兄弟选择器</span>（p ~ ul）： 选择P元素后面的所有兄弟元素ul</li></ul><p class="note note-success">伪类选择器</p><table><thead><tr><th>伪类选择器</th><th>描述</th></tr></thead><tbody><tr><td><span class="text-mark">:link</span></td><td>选择未被访问的链接</td></tr><tr><td><span class="text-mark">:visited</span></td><td>选择已被访问的链接</td></tr><tr><td><span class="text-mark">:active</span></td><td>选择活动链接</td></tr><tr><td><span class="text-mark">:hover</span></td><td>选择鼠标指针浮动在上面的元素</td></tr><tr><td><span class="text-mark">:focus</span></td><td>选择具有焦点的元素</td></tr><tr><td><span class="text-mark">:first-child</span></td><td>选择父元素的首个子元素（本身元素必须是第一个元素）</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:checked</span></td><td>选择选中的元素</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:disabled</span></td><td>选择被禁用的元素</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:enabled</span></td><td>选择可用的元素（与disabled互斥的，默认的输入框就是enabled）</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:empty</span></td><td>选择没有子元素的元素（子元素包括内容为空）</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:root</span></td><td>表示文档根元素，相当于全局属性，常用来定义CSS变量</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:not(selector)</span></td><td>选择与 selector 不匹配的所有元素，有用++</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:first-of-type</span></td><td>选择父元素的第一个同种类型的子元素（本身元素必须是同种类型中的第一个元素）</td></tr><tr><td>of-type</td><td>以下所指的同种类型一定指的是<span class="text-highlight">标签</span>元素同种类型！！</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:last-child</span></td><td>选择父元素的最后一个子元素（最后一个子元素必须是当前元素）</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:last-of-type</span></td><td>选择父元素的同种类型的最后一个子元素</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:nth-child(n)</span></td><td>选择元素在一组同级中的位置匹配元素（n从1开始的正整数，an + b, 可以 odd even）</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:nth-of-type(n)</span></td><td>选择元素在一组同级中相类型元素的匹配位置</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:only-child</span></td><td>选择没有任何兄弟的元素</td></tr><tr><td><span class="text-star">*</span> <span class="text-mark">:only-of-type</span></td><td>选择没有同种类型兄弟元素的元素</td></tr></tbody></table><p class="note note-danger">selector:first-child</p><ul><li>选择当前元素的父元素中的第一个<code>当前</code>元素</li><li>selector作为目标元素，去寻找他的父元素（可以在前面定义指定的父元素，未指定则往上找父元素即可） </li><li>并且 selector 是作为他父元素的第一个子元素</li><li>区别 :first-of-type 选择当前元素的父元素中 同种类型的第一个<code>当前</code>子元素</li></ul><p class="note note-danger">selector:nth-child(n)</p><ul><li>选择当前元素的同级所有元素，n匹配对应的第n个元素位置</li><li>区别 :nth-of-type(n) 选择当前元素同级的<code>相同类型</code>的元素</li><li>n 匹配对应相同类型元素中第n个相同元素位置</li></ul><p class="note note-danger">selector:first-child & selector:first-of-type</p><ul><li>伪元素前面写 <span class="text-mark">tagName</span> 和 <span class="text-mark">其他选择器</span> 含义完全不同<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">:first</span>-of-type<br><span class="hljs-comment">/* 从所有子元素中查找第一个出现某种类型的，同一个父元素可能同时命中多次 */</span><br><span class="hljs-comment">/*（因为没有限定类型，所以可以是第一个 div、第一个 span、第一个 P 只针对标签）*/</span><br><br>tagName<span class="hljs-selector-pseudo">:first</span>-of-type<br><span class="hljs-comment">/* 从所有子元素中查找第一个tagName，同一个父元素最多只能命中一次 */</span><br><br><span class="hljs-selector-class">.className</span><span class="hljs-selector-pseudo">:first</span>-of-type <br><span class="hljs-comment">/* 从所有class是className的子元素中查找第一次出现的某种元素类型 */</span><br><span class="hljs-comment">/* 例如第一个 div、第一个 span、第一个 p, 同一个父元素可能命中多次 */</span><br><span class="hljs-comment">/* 特别注意，并不是从子元素中查找第一个.className */</span><br><span class="hljs-comment">/* 找出的 class 为 className 的所有子元素找第一次（是从所有子元素中找，不是className的元素！！！） */</span><br><span class="hljs-comment">/* 从所有元素找同种类型，不管 是不是 className值的元素！！！ */</span><br></code></pre></td></tr></table></figure></li></ul><h3 id="CSS隐藏元素方式"><a href="#CSS隐藏元素方式" class="headerlink" title="CSS隐藏元素方式"></a>CSS隐藏元素方式</h3><table><thead><tr><th>方式</th><th>描述</th></tr></thead><tbody><tr><td>display: none</td><td>元素在页面上消失，本身占有空间被其它元素占有，会导致<code>重排和重绘</code>；元素不可见，不占空间，无法响应事件</td></tr><tr><td>visibility: hidden</td><td>元素仅仅隐藏，DOM仍存在，只是不可见状态，<code>不会重排，会重绘</code>；元素不可见，占空间，无法响应事件</td></tr><tr><td>opacity: 0</td><td>元素透明度为0，人眼不可见，不会重排，<code>一般会引发重绘</code>，透明后其子元素都会透明；元素不可见，占空间，<code>可响应事件</code></td></tr><tr><td>width&#x2F;height&#x3D;0</td><td>元素盒子模型为0；元素不可见，不占空间，无法响应事件</td></tr><tr><td>position:absolute</td><td>将元素脱离文档流移出可视区域；元素不可见，不影响布局</td></tr><tr><td>clip-path</td><td>通过裁剪的方式；元素不可见，占空间，无法响应事件</td></tr></tbody></table><h3 id="响应式布局的理解-Todo"><a href="#响应式布局的理解-Todo" class="headerlink" title="响应式布局的理解 Todo"></a>响应式布局的理解 Todo</h3><h3 id="水平垂直居中的方法-Todo"><a href="#水平垂直居中的方法-Todo" class="headerlink" title="水平垂直居中的方法 Todo"></a>水平垂直居中的方法 Todo</h3><h3 id="多栏布局，固定与自适应-Todo"><a href="#多栏布局，固定与自适应-Todo" class="headerlink" title="多栏布局，固定与自适应 Todo"></a>多栏布局，固定与自适应 Todo</h3><h3 id="单行-多行文本溢出-Todo"><a href="#单行-多行文本溢出-Todo" class="headerlink" title="单行&#x2F;多行文本溢出 Todo"></a>单行&#x2F;多行文本溢出 Todo</h3><h3 id="CSS画三角形（原理）-Todo"><a href="#CSS画三角形（原理）-Todo" class="headerlink" title="CSS画三角形（原理） Todo"></a>CSS画三角形（原理） Todo</h3><h3 id="视差滚动-Todo"><a href="#视差滚动-Todo" class="headerlink" title="视差滚动 Todo"></a>视差滚动 Todo</h3><h3 id="3D效果-Todo"><a href="#3D效果-Todo" class="headerlink" title="3D效果 Todo"></a>3D效果 Todo</h3><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ol><li>backgroud-position: x% y%; &#x2F;&#x2F; 有待考察</li><li>border: none 与 border: 0 的区别</li></ol><div id="gitalk-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><script>const gitalk = new Gitalk({    clientID: '3e6a50fe69c43e59de05',    clientSecret: '829d07fcd6cc13e98928a3dd207758cda7c4facb',    repo: 'WatcherOne.github.io',    owner: 'WatcherOne',    admin: ['WatcherOne'],    id: location.pathname,    distractionFreeMode: false})gitalk.render('gitalk-container')</script>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端面试</category>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>软件包管理器</title>
+    <link href="/2023/08/16/tools/"/>
+    <url>/2023/08/16/tools/</url>
+    
+    <content type="html"><![CDATA[<p>包管理工具设置</p><span id="more"></span><table><thead><tr><th></th><th><strong>wget</strong></th><th><strong>yum</strong></th></tr></thead><tbody><tr><td>定义</td><td>下载工具</td><td>软件包管理器</td></tr><tr><td>描述</td><td>是通过HTTP、HTTPS、FTP三个最常见的TCP&#x2F;IP协议下载，并可以使用HTTP代理，名字是World Wide Web”与“get”的结合</td><td>是redhat, centos 系统下的软件安装方式，基于Linux，是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器，是基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包</td></tr><tr><td>区别</td><td>wget好比迅雷下载中心</td><td>yum就像是应用商店，里面有很多软件当然也有没有的</td></tr></tbody></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>下载工具</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>yum</tag>
+      
+      <tag>wget</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/08/16/tomcat/"/>
+    <url>/2023/08/16/tomcat/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>去 Apache 官网下载 压缩包（或 <a href="http://39.106.78.182/download/package/apache-tomcat-8.5.88.tar.gz">tomcat-8.5</a>）</p></li><li><p>将源码包上传到服务器上并解压</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">tar -xzvf tomcat-8.5.tar.gz<br></code></pre></td></tr></table></figure></li><li><p>将解压的文件夹移到指定位置（或在指定位置解压）</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mv tomcat-8.5.tar.gz /usr/local/tomcat<br></code></pre></td></tr></table></figure></li><li><p>拷贝文件 catalina.sh 到 init.d 下, 并在 init.d 开头添加下面语句</p><blockquote><p>是为了方便启动和停止 tomcat (自启动)</p></blockquote> <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs vim"># chkconfig: <span class="hljs-number">112</span> <span class="hljs-number">63</span> <span class="hljs-number">37</span><br># description: tomcat server init script<br># Source Function Library<br>. /etc/init.d/functions<br><br>JAVA_HOME=/usr/local/java/       # jdk安装路径<br>CATALINA_HOME=/usr/local/tomcat  # tomcat安装路径<br></code></pre></td></tr></table></figure></li><li><p>保存后，执行下面语句</p><blockquote><p>chkconfig –list # 查看系统服务 (下面命令执行后可查看是否包含了tomcat)</p></blockquote> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">chmod 755 /etc/init.d/tomcat  # 修改文件或文件夹权限 755 权限<br>chkconfig --add tomcat        # 将tomcat添加到系统服务中（方便自启动）<br>chkconfig tomcat on           # on 设置开机自启动 off 关闭自启动<br></code></pre></td></tr></table></figure><p> <img src="http://39.106.78.182/download/image/service-list.png" alt="查看系统服务"></p></li><li><p>配置环境变量</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim /etc/profile<br><br>export CATALINA_HOME=/usr/local/tomcat/tomcat-8.5     // 配置 tomcat 路径别名<br>export PATH=$PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin   // 将 别名/bin 添加到 环境变量PATH 中<br></code></pre></td></tr></table></figure></li><li><p>读取并执行配置</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">source /etc/profile<br></code></pre></td></tr></table></figure></li><li><p>启动 Tomcat</p><blockquote><p><span style="color:rgb(241, 123, 123)">&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;bin&#x2F;startup.sh</span></p></blockquote> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">./startup.sh          // 进入 bin 目录下, 执行 = 开启 tomcat 服务<br>./shutdown.sh         // 进入 bin 目录下, 执行 = 关闭 tomcat 服务<br>startup.sh            // 当配有环境变量时, 任何位置执行 [好像不太行,还是需要进入/bin]<br>service tomcat start  // 任何位置开启 tomcat 服务<br>service tomcat stop   // 任何位置关闭 tomcat 服务<br></code></pre></td></tr></table></figure><blockquote><p>因为加入了系统服务中所有可以 service 启动; 因为 &#x2F;etc&#x2F;rc.d&#x2F;init.d 下设置有 tomcat 启动脚本; service 命令执行时linux去 &#x2F;etc&#x2F;rc.d&#x2F;init.d 找对应的脚本</p></blockquote></li><li><p>查看 Tomcat 状态</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">ps -ef|grep java<br><br>// # 当出现如下一行结果表示 tomcat 服务关闭状态, 否则开启<br>// root 7010 1 0 Oct19 ? 00:30:30 [java]<br></code></pre></td></tr></table></figure></li><li><p>Tomcat 对应 8080 端口服务能访问需要以下两点</p><ol><li>防火墙关闭</li><li>云服务器完全组设置有入方向的 8080 端口</li><li>&#x2F;tomcat&#x2F;conf&#x2F;server.xml 配置文件 &lt;Connector port&#x3D;”8080”… &#x2F;&gt;<br><img src="http://39.106.78.182/download/image/tomcat%E9%85%8D%E7%BD%AE.png" alt="tomcat配置"></li></ol></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>yum</tag>
+      
+      <tag>wget</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2023/08/16/hello-world/"/>
+    <url>/2023/08/16/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>home</title>
+    <link href="/2023/08/15/home/"/>
+    <url>/2023/08/15/home/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>常用工具网站</title>
+    <link href="/2023/08/01/website/"/>
+    <url>/2023/08/01/website/</url>
+    
+    <content type="html"><![CDATA[<style>table th:first-of-type {    min-width: 120px;}table th:nth-of-type(2) {    width: 40%;}table th:nth-of-type(3) {    width: 60%;}</style><blockquote><p>网址工具类</p></blockquote><table><thead><tr><th align="center">地址</th><th>描述</th><th>补充</th></tr></thead><tbody><tr><td align="center"><a href="https://link-to-qr.com/">qr</a></td><td>一款在线制作二维码图</td><td>可以自定义url以及二维码样式颜色</td></tr><tr><td align="center"><a href="https://editor.method.ac/">svg</a></td><td>一款在线制作 svg 图</td><td>可以导入图片编辑也可以选择一些形状等</td></tr><tr><td align="center"><a href="https://the-echoplex.net/flexyboxes/">flex</a></td><td>一款在线可视化Flex布局效果实时展示</td><td>利于新手学习</td></tr><tr><td align="center"><a href="https://undraw.co/">svg插图</a></td><td>一个提供svg插图素材的网站</td><td>用于下载一些svg格式的素材</td></tr><tr><td align="center"><a href="https://overapi.com/">API</a></td><td>一个汇聚了大量开发语言和工具的API</td><td>用于快速查看API文档,只有常用的</td></tr><tr><td align="center"><a href="https://ihateregex.io/">正则表达式</a></td><td>一个提供常用正则表达式的网站</td><td>可以修改正则来验证</td></tr><tr><td align="center"><a href="https://cssbattle.dev/">css-dev</a></td><td>一个针对CSS爱好者的代码高尔夫游戏网站</td><td>以用最小的CSS代码直观地还原题目</td></tr></tbody></table><blockquote><p>工具插件类</p></blockquote><table><thead><tr><th align="center">地址</th><th>描述</th><th>补充</th></tr></thead><tbody><tr><td align="center"><a href="https://printjs.crabbly.com/">print</a></td><td>一款打印pdf的插件</td><td>未使用过</td></tr></tbody></table><blockquote><p>chrome浏览器插件</p></blockquote><table>    <thead>        <tr>            <th>地址</th>            <th>描述</th>            <th>补充</th>        </tr>    </thead>    <tbody>        <tr>            <td><a href="https://printjs.crabbly.com/">Tampermonkey</a></td>            <td>油猴,一个浏览器扩展,用于安装与执行脚本的插件;脚本管理器</td>            <td>允许用户自定义脚本</td>        <tr>        <tr>            <td></td>            <td><a href="https://greasyfork.org/zh-CN/scripts">Greasy Fork</a></td>            <td>脚本仓库,拥有大量用户脚本,提供脚本搜索等功能</td>        </tr>        <tr>            <td></td>            <td><a href="https://openuserjs.org/">OpenUserJS</a></td>            <td>另一个大型的用户脚本社区,提供丰富脚本资源,强调社区参与用户提交自己的脚本</td>        </tr>        <tr>            <td></td>            <td><span style="color:lightblue">常用脚本推荐</span></td>            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=1518a3ca-e7ed-4c49-8bef-362959e2d5fc">全网VIP视频去广告</a></td>        </tr>        <tr>            <td></td>            <td></td>            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=9638c9d2-709d-43f4-b575-c927aef3a14c">解除文本选中限制</a></td>        </tr>        <tr>            <td></td>            <td></td>            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=7a2f6acd-501f-4388-9d19-a83483a2f4ec">解除B站区域限制</a></td>        </tr>    </tbody></table><blockquote><p>娱乐类</p></blockquote><table><thead><tr><th align="center">地址</th><th>描述</th><th>补充</th></tr></thead><tbody><tr><td align="center"><a href="https://sms-activate.org/">虚拟号码</a></td><td>外网虚拟号码服务平台</td><td>通过虚拟号码接收短信验证码 <a href="https://watcherone.github.io/2023/08/01/websiteVirtualPhone">详细</a></td></tr><tr><td align="center"><a href="https://byrutdb.org/">盗版游戏A</a></td><td><code>Byrutor</code>盗版游戏下载</td><td>一款来自俄罗斯的破解游戏资源网站 <a href="https://watcherone.github.io/2023/08/01/websiteGameALoad">详细</a></td></tr><tr><td align="center"><a href="https://rutracker.net/">盗版游戏B</a></td><td><code>RuTracker</code>盗版游戏下载</td><td>俄罗斯此前最大的的盗版资源下载网站 <a href="https://watcherone.github.io/2023/08/01/websiteGameBLoad">详细</a></td></tr><tr><td align="center"><a href="https://download.fourpetal.com/">盗版游戏C</a></td><td><code>Switch520</code>盗版游戏下载</td><td>国内游戏下载网址，提供很多switch游戏 <a href="https://watcherone.github.io/2023/08/01/websiteGameCLoad">详细</a></td></tr><tr><td align="center"><a href="https://openai.com/">openAI-官网</a></td><td>openAI公司官网</td><td>测试账号: <code>谷歌账号</code> &#x2F; <code>密码大写</code></td></tr><tr><td align="center"><a href="https://chat.openai.com/">openAI-chat</a></td><td>chatGPT-chat网站</td><td>人工智能对话，需要翻墙</td></tr><tr><td align="center"><a href="https://platform.openai.com/">openAI-doc</a></td><td>openAI平台文档说明</td><td>提供用户登录等API文档，常用示例说明，需要翻墙+无痕</td></tr><tr><td align="center"><a href="https://api.openai.com/">openAI-api</a></td><td>api服务地址</td><td>提供后端接口的服务器，需要翻墙+无痕</td></tr></tbody></table><div id="gitalk-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><script>const gitalk = new Gitalk({    clientID: '3e6a50fe69c43e59de05',    clientSecret: '829d07fcd6cc13e98928a3dd207758cda7c4facb',    repo: 'WatcherOne.github.io',    owner: 'WatcherOne',    admin: ['WatcherOne'],    id: location.pathname,    distractionFreeMode: false})gitalk.render('gitalk-container')</script>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>工具</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Byrutor盗版游戏下载</title>
+    <link href="/2023/08/01/websiteGameALoad/"/>
+    <url>/2023/08/01/websiteGameALoad/</url>
+    
+    <content type="html"><![CDATA[<style>.markdown-body h3 {    margin-top: 0;}.navbar.scrolling-navbar {    background-color: var(--navbar-bg-color) !important;    opacity: 0.8;}</style><h3 id="Byrutor"><a href="#Byrutor" class="headerlink" title="Byrutor"></a><a href="https://byrutdb.org/">Byrutor</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs copy">https://byrutdb.org<br></code></pre></td></tr></table></figure><ul><li>一款来自俄罗斯的破解游戏资源网站</li><li>基本是全<code>Steam</code>上搬过来的（也包含其它平台）</li><li>所有资源以<code>BT种子</code>的形式保存, 可以直接下载</li><li>目前网站完全开放, 国内可直接访问</li><li>网站是俄语, 建议下个谷歌<code>翻译插件</code> (需要开vpn)</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>RuTracker盗版游戏下载</title>
+    <link href="/2023/08/01/websiteGameBLoad/"/>
+    <url>/2023/08/01/websiteGameBLoad/</url>
+    
+    <content type="html"><![CDATA[<style>.markdown-body h3 {    margin-top: 0;}.navbar.scrolling-navbar {    background-color: var(--navbar-bg-color) !important;    opacity: 0.8;}</style><h3 id="RuTracker"><a href="#RuTracker" class="headerlink" title="RuTracker"></a><a href="https://rutracker.net/">RuTracker</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs copy">https://rutracker.net<br></code></pre></td></tr></table></figure><ul><li>RuTracker是俄罗斯此前最大的的盗版资源下载网站</li><li>提供了大量 <code>软件</code> &#x2F; <code>影视</code> &#x2F; <code>动漫</code> &#x2F; <code>游戏</code> 的<code>免费破解资源</code></li><li>国内许多绿色汉化版都是在它基础上加上<code>汉化补丁</code>的</li><li>需要注册账号, 建议使用浏览器翻译插件(该插件无效)</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Switch520盗版游戏下载</title>
+    <link href="/2023/08/01/websiteGameCLoad/"/>
+    <url>/2023/08/01/websiteGameCLoad/</url>
+    
+    <content type="html"><![CDATA[<style>.markdown-body h3 {    margin-top: 0;}.navbar.scrolling-navbar {    background-color: var(--navbar-bg-color) !important;    opacity: 0.8;}</style><h3 id="Switch520"><a href="#Switch520" class="headerlink" title="Switch520"></a><a href="https://download.fourpetal.com/">Switch520</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs copy">https://download.fourpetal.com<br></code></pre></td></tr></table></figure><ul><li>国内游戏下载网址, 服务器在香港</li><li>switch520.com原域名已改</li><li>提供很多switch游戏和补丁（包含其它PC游戏）</li><li>可以直接下载, 就是广告太多</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>虚拟号码服务平台</title>
+    <link href="/2023/08/01/websiteVirtualPhone/"/>
+    <url>/2023/08/01/websiteVirtualPhone/</url>
+    
+    <content type="html"><![CDATA[<style>.navbar.scrolling-navbar {    background-color: var(--navbar-bg-color) !important;    opacity: 0.8;}</style><h4 id="外网虚拟号码服务平台"><a href="#外网虚拟号码服务平台" class="headerlink" title="外网虚拟号码服务平台"></a><a href="https://sms-activate.org/">外网虚拟号码服务平台</a></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs copy">https://sms-activate.org<br></code></pre></td></tr></table></figure><ul><li>使用虚拟手机号码接收<code>短信验证码</code></li><li>需要进行<code>账号注册</code>并充值, 每个手机号码价值不同</li><li>选择国家和项目（根据项目服务提供虚拟手机号码）</li><li>可以选择不同时效性（4h ~ 4周）不同租金</li><li>测试账号 <code>主QQ号码</code> &#x2F; <code>密码大小写</code> &#x2F; <code>剩余价值：91.36₽</code> <sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="请联系网页管理员使用或自己注册并充值">[1]</span></a></sup></li></ul><p><strong>参考</strong></p><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><span>请联系网页管理员使用或自己注册并充值</span><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/05/30/node/"/>
+    <url>/2023/05/30/node/</url>
+    
+    <content type="html"><![CDATA[<blockquote><h1 id="查看包最新版本"><a href="#查看包最新版本" class="headerlink" title="查看包最新版本"></a>查看包最新版本</h1></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm view [packname] version<br></code></pre></td></tr></table></figure><blockquote><h1 id="查看包所有可安装的版本"><a href="#查看包所有可安装的版本" class="headerlink" title="查看包所有可安装的版本"></a>查看包所有可安装的版本</h1></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm view [packname] versions<br></code></pre></td></tr></table></figure><blockquote><h1 id="设置-node-默认版本"><a href="#设置-node-默认版本" class="headerlink" title="设置 node 默认版本"></a>设置 node 默认版本</h1></blockquote><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">nvm</span> alias default v16.<span class="hljs-number">14</span>.<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/04/26/service/"/>
+    <url>/2023/04/26/service/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>后端项目先打包，通过执行 package 或 mvn package</p><p><img src="http://39.106.78.182/image/service-nohup.png" alt="java打包"></p></li><li><p>将 .jar 压缩包放到 服务器 &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps&#x2F;</p></li><li><p>进去打包文件位置，执行启动命令</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">nohup java -jar xxx.jar &amp;<br><span class="hljs-meta prompt_"># </span><span class="language-bash"><span class="hljs-built_in">nohup</span>: no hang up; 不挂起，用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">执行相应的配置</span><br>nohup java -jar xxx.jar --spring.profiles.active=prod<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/04/24/scp_sftp/"/>
+    <url>/2023/04/24/scp_sftp/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>当上传文件过大（超过500M）时，可以通过ssh来上传与下载</strong></p></blockquote><table><thead><tr><th>方式</th><th>特点</th></tr></thead><tbody><tr><td>scp</td><td>较为方便，功能单一</td></tr><tr><td>sftp</td><td>支持传输中断后继续传输，一般传输大文件，使用较多</td></tr></tbody></table><h5 id="scp"><a href="#scp" class="headerlink" title="scp"></a><code>scp</code></h5><blockquote><p>直接打开终端, 输入如下命令, 登录远程后即可下载上传文件</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh root@ip<br></code></pre></td></tr></table></figure><table><thead><tr><th>操作</th><th>命令</th></tr></thead><tbody><tr><td>下载</td><td>scp root@ip:&#x2F;usr&#x2F;xxx&#x2F;a.txt &#x2F;documents</td></tr><tr><td>上传</td><td>scp &#x2F;documents&#x2F;a.txt root@ip:&#x2F;usr&#x2F;xxx</td></tr><tr><td>文件夹时</td><td>-r</td></tr></tbody></table><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scp -r /documents/web root@ip:/usr/documents<br></code></pre></td></tr></table></figure><h5 id="sftp-ftp"><a href="#sftp-ftp" class="headerlink" title="sftp(ftp)"></a><code>sftp(ftp)</code></h5><blockquote><p>打开终端, 选择新建远程连接, 选择 sftp, 添加服务器 IP, 输入密码</p></blockquote><p><img src="http://39.106.78.182/download/image/sftp.png" alt="sftp连接"></p><table><thead><tr><th>操作</th><th>命令</th><th>描述</th></tr></thead><tbody><tr><td>下载</td><td>get &#x2F;usr&#x2F;local&#x2F;a.text &#x2F;documents</td><td>前为服务器路径，后为本地下载路径</td></tr><tr><td>上传</td><td>put &#x2F;documents&#x2F;a.text &#x2F;usr&#x2F;local</td><td>前为本地上传文件路径<code>如果找不到文件路径，直接拖动文件到终端</code>，后为服务器路径</td></tr><tr><td>文件夹时</td><td>-r</td><td>get&#x2F;put 后面加 -r</td></tr></tbody></table>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/04/24/mysql/"/>
+    <url>/2023/04/24/mysql/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>下载对应的安装包</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget https://dev.mysql.com/get/mysql57-community-release-el6-9.noarch.rpm<br></code></pre></td></tr></table></figure></li><li><p>安装用来配置mysql的 yum源的rpm包</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum localinstall -y mysql57-community-release-el6-9.noarch.rpm<br></code></pre></td></tr></table></figure><blockquote><p>安装成功后, 会在&#x2F;etc&#x2F;yum.repos.d&#x2F;下会多出几个mysql的yum源的配置</p></blockquote><p> <img src="http://39.106.78.182/download/image/yum-mysql.png" alt="配置文件"></p></li><li><p>安装 mysql</p> <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">yum install -y mysql-community-<span class="hljs-keyword">server</span> --nogpgcheck  <span class="hljs-meta"># nogpgcheck 不校验数字签名</span><br></code></pre></td></tr></table></figure><blockquote><p>如果遇到报错可能是: 配置源版本不对！将 6 -&gt; 7   1 -&gt; 0</p></blockquote> <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">vim <span class="hljs-regexp">/etc/yum</span>.repos.d/mysql-community.repo<br></code></pre></td></tr></table></figure><p> <img src="http://39.106.78.182/download/image/yum-mysql-bug.png" alt="安装mysql-server报错"></p></li><li><p>启动 mysql</p> <figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nsis"><span class="hljs-params">system</span>ctl status mysqld          <span class="hljs-comment"># 查看状态</span><br><span class="hljs-params">system</span>ctl start mysqld.service   <span class="hljs-comment"># 启动 mysql</span><br></code></pre></td></tr></table></figure></li><li><p>查看初始密码</p> <figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade">grep <span class="hljs-string">&quot;password&quot;</span> /<span class="hljs-keyword">var</span>/<span class="hljs-built_in">log</span>/mysqld.<span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure><p> <img src="http://39.106.78.182/download/image/mysql-password.png" alt="查看mysql初始密码"></p></li><li><p>root 连接数据库</p><blockquote><p>mysql 命令台命令一定以 ‘;’ 结尾<br> <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">mysql -u root -p  <span class="hljs-comment"># 登录root账号</span><br>alter user <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> identified by <span class="hljs-string">&#x27;密码&#x27;</span>;   <span class="hljs-comment"># 修改密码[有密码策略要求的]</span><br>flush privileges;   <span class="hljs-comment"># 刷新权限</span><br><span class="hljs-keyword">exit</span>;               <span class="hljs-comment"># 退出mysql命令台</span><br></code></pre></td></tr></table></figure></p></blockquote></li><li><p>修改 mysql 权限类问题</p> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">show</span> databases;              # 显示所有数据库<br>use mysql;                   # 使用mysql这个数据库来修改管理员权限<br><span class="hljs-keyword">select</span> <span class="hljs-keyword">user</span>,host <span class="hljs-keyword">from</span> <span class="hljs-keyword">user</span>;  # 从mysql这个数据库中的<span class="hljs-keyword">user</span>表中取出 <span class="hljs-keyword">user</span>,host字段<br></code></pre></td></tr></table></figure><p> <img src="http://39.106.78.182/download/image/mysql-init.png" alt="mysql配置"></p><blockquote><p>localhost 表示允许本地登录, 想要远程登录mysql, 需要修改权限为 %</p></blockquote> <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">update</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">set</span> host=<span class="hljs-string">&#x27;%&#x27;</span> <span class="hljs-keyword">where</span> <span class="hljs-keyword">user</span> = <span class="hljs-string">&#x27;root&#x27;</span>;<br>flush <span class="hljs-keyword">privileges</span>;   # 设置了一定要刷新<br></code></pre></td></tr></table></figure><blockquote><p>更新密码加密规则以适应低版本连接<br>授权root远程登录, 后面密码代表登录密码</p></blockquote> <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">user</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;%&#x27;</span> IDENTIFIED <span class="hljs-keyword">WITH</span> mysql_native_password <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;登录密码&#x27;</span>;<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/04/24/menu/"/>
+    <url>/2023/04/24/menu/</url>
+    
+    <content type="html"><![CDATA[<h3 id="服务器环境配置"><a href="#服务器环境配置" class="headerlink" title="服务器环境配置"></a><span style="color:green">服务器环境配置</span></h3><hr><ul><li><input disabled="" type="checkbox"> @<span style="color:#4b96e6">watcher</span></li><li><input disabled="" type="checkbox"> @<a href="https://github.com/WatcherOne">github.com</a></li></ul><hr><ol><li><a href="http://39.106.78.182/detail/1">linux实例开启root用户远程登录</a></li><li><a href="http://39.106.78.182/detail/2">下载工具-Yum &amp; Wget</a></li><li><a href="http://39.106.78.182/detail/3">安装配置-Tomcat</a></li><li><a href="http://39.106.78.182/detail/4">安装配置-JDK</a></li><li><a href="http://39.106.78.182/detail/2">安装配置-Nginx</a></li><li><a href="http://39.106.78.182/detail/2">安装配置-Mysql</a></li><li><a href="http://39.106.78.182/detail/2">安装配置-Git &amp; Nvm</a></li><li><a href="http://39.106.78.182/detail/2">Linux常用命令</a></li></ol><hr><p><strong><span style="color:#a16946">查看文献</span></strong></p><ul><li><a href="https://help.aliyun.com/product/25365.html?spm=a2c4g.108426.0.0.26fe64bfV9kcOW">阿里云服务器操作文档</a></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/04/24/root_login/"/>
+    <url>/2023/04/24/root_login/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>linux系统部分是默认禁用 SSHD 服务中root用户远程登录的，导致登录时提示用户名或密码错误</strong></p></blockquote><ol><li><p>通过 VNC登录 开启 root 远程登录 - 初次进入需要重置密码 [密码限制-6位大小写]</p></li><li><p>重置后 <span style="color:red">登录 VNC</span> , 默认维持300s左右时间, 超过无任何操作时会自动断开</p></li><li><p>然后实例登录, 需要外面实例先进行实例密码重置, <span style="color:red">实例登录</span>: root + 密码 [不限位数大小写]</p></li><li><p>进入VNC界面后，打开 SSH 配置文件</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim /etc/ssh/sshd_config<br></code></pre></td></tr></table></figure><p> <img src="http://39.106.78.182/download/image/vnc%E7%95%8C%E9%9D%A2.png" alt="VNC界面"></p></li><li><p>按 i 进入编辑模式，将「PermitRootLogin」和「PasswordAuthentication」设为 yes</p> <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vim">PermitRootLogin yes<br>PasswordAuthentication yes<br></code></pre></td></tr></table></figure><p> <img src="http://39.106.78.182/download/image/sshd%E9%85%8D%E7%BD%AE.png" alt="VNC界面"></p></li><li><p>按 esc 键退出 i 编辑模式，输入 :wq 保存修改退出</p></li><li><p>重启SSHD服务 即可通过 ssh服务 root远程登录</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl restart sshd.service<br></code></pre></td></tr></table></figure></li><li><p>本地开启 ssh 服务「需要有sshd服务才可以用ssh登录」</p> <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">ssh root@IP<br><span class="hljs-bullet">- </span>输入密码登录<br><span class="hljs-bullet">- </span>ctrl + D 退出登录<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/04/24/jdk/"/>
+    <url>/2023/04/24/jdk/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>安装 jdk8 <a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html">官网资源包</a> ｜ <a href="http://39.106.78.182/download/package/jdk-8u371-linux-x64.tar.gz">已下好的资源包</a></p></li><li><p>上传压缩包到指定目录下, 并解压</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">tar -zxvf jdk-8u221.tar.gz -C /usr/local/java<br></code></pre></td></tr></table></figure></li><li><p>配置环境变量</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim /etc/profile<br><br>export JAVA_HOME=/usr/local/java/jdk-8      // 安装的JDK路径<br>export JRE_HOME=/usr/local/java/jdk-8/jre   // JDK中JRE路径<br>export CLASSPATH=&quot;.:$JAVA_HOME/lib:$JRE_HOME/lib&quot;<br>export PATH=$JAVA_HOME/bin:$PATH            // 其它环境变量用 : 连接<br></code></pre></td></tr></table></figure><blockquote><p>为了防止所有命令找不到时加的，其实用上面的配置即可</p></blockquote> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin<br></code></pre></td></tr></table></figure></li><li><p>读取并执行配置</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">source /etc/profile<br></code></pre></td></tr></table></figure></li><li><p>查看JDK是否安装成功</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">java -version<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/04/24/nginx/"/>
+    <url>/2023/04/24/nginx/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>查看可安装的版本</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum list nginx*<br></code></pre></td></tr></table></figure></li><li><p>安装某一个版本</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum install -y nginx.x86_64  # 表示自动同意安装<br></code></pre></td></tr></table></figure></li><li><p>nginx配置文件</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim /etc/nginx/nginx.conf<br></code></pre></td></tr></table></figure><blockquote><p>注意 root 与 alias 的区别【路径配置 root &#x2F;xxx&#x2F;xx&#x2F; 最后一个是否有&#x2F;；配置太难啦！】</p></blockquote><p> <img src="http://39.106.78.182/download/image/nginx%E9%85%8D%E7%BD%AE.png" alt="nginx配置"></p></li><li><p>启动 <code>nginx</code> 服务</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">nginx -t [-c /etc/nginx/nginx/conf]  # 查看nginx配置文件是否正确<br><br>start nginx<br>systemctl start nginx    # 两种方式都可以<br></code></pre></td></tr></table></figure></li><li><p>nginx常用命令</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl status nginx  # 查看nginx状态<br>nginx -s reload         # 重启nginx（每次修改了配置文件都需要重启）<br>nginx -s stop           # 关闭nginx<br></code></pre></td></tr></table></figure><p> <img src="http://39.106.78.182/download/image/nginx%E7%8A%B6%E6%80%81.png" alt="nginx状态"></p></li><li><p>nginx 权限问题</p><p> <img src="http://39.106.78.182/download/image/nginx-auth.png" alt="nginx-auth"></p> <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">[</span><span class="hljs-number">0</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> 权限【读写类】<br><span class="hljs-punctuation">[</span><span class="hljs-number">2</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> 连结<br><span class="hljs-punctuation">[</span><span class="hljs-number">3</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> 拥有者<br><span class="hljs-punctuation">[</span><span class="hljs-number">4</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> 群组<br><span class="hljs-punctuation">[</span><span class="hljs-number">5</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> 文件容量<br><span class="hljs-punctuation">[</span><span class="hljs-number">6</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> 修改日期<br><span class="hljs-punctuation">[</span><span class="hljs-number">7</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">:</span> 文件或目录<br></code></pre></td></tr></table></figure> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">chmod 755 /xxx/xx          # * 修改当前文件下所有文件的权限 755: rwx 全放开<br>chmod 所有者:所属组 /xxx/xx  # 修改后面文件夹或文件的所有者与所属者<br>chmod -r 所有者:所属组 /xxx  # 修改子目录下的所有<br></code></pre></td></tr></table></figure></li><li><p>配置后端服务接口</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">location /api &#123;<br>    proxy_set_header Host $http_host;<br>    proxy_set_header X-Real-IP $remote_addr;<br>    proxy_set_header REMOTE-HOST $remote_addr;<br>    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;<br>    proxy_pass http://localhost:8080/api;<br>&#125;<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/04/24/git_nvm/"/>
+    <url>/2023/04/24/git_nvm/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p>安装 <code>git</code></p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum install -y git<br></code></pre></td></tr></table></figure></li><li><p>配置 git</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">git --version # 查看版本<br><br>git config --global user.name &quot;xxx&quot;   # 配置git<br>git config --global user.email &quot;xxx&quot;  # 配置git<br>git config -l  # 查看配置<br></code></pre></td></tr></table></figure></li><li><p>安装 <code>nvm</code></p><blockquote><p>通过 git 来安装 nvm<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git clone https://github.com/cnpm/nvm.git ~/.nvm &amp;&amp; cd ~/.nvm &amp;&amp; git checkout `git describe --abbrev=0 --tags`<br></code></pre></td></tr></table></figure><br>~&#x2F;.nvm 表示创建你的本地项目目录</p></blockquote></li><li><p>配置 nvm 环境</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo &quot;. ~/.nvm/nvm.sh&quot; &gt;&gt; /etc/profile<br></code></pre></td></tr></table></figure></li><li><p>读取并执行配置</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">source /etc/profile<br></code></pre></td></tr></table></figure></li><li><p>查看nvm</p><blockquote><p>nvm <a href="http://39.106.78.182/detail/2">常用命令</a><br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">nvm --version<br></code></pre></td></tr></table></figure></p></blockquote></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2023/04/24/linux_cmd/"/>
+    <url>/2023/04/24/linux_cmd/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>vim &#x2F; vi 命令</strong></p></blockquote><table><thead><tr><th>命令</th><th>操作</th><th>说明</th></tr></thead><tbody><tr><td>vim&#x2F;vi 文件地址</td><td></td><td>当文件存在时, 进入vim模式；否则新建文件并进入vim模式</td></tr><tr><td></td><td>按 i</td><td>进去insert编辑模式</td></tr><tr><td></td><td>按 esc</td><td>退出某种编辑模式</td></tr><tr><td></td><td>:q</td><td>在退出模式下未修改时直接退出</td></tr><tr><td></td><td>:q!</td><td>在退出模式下强制退出 [放弃修改并退出]</td></tr><tr><td></td><td>:wq</td><td>在退出模式下保存修改并退出vim&#x2F;vi</td></tr></tbody></table><blockquote><p><strong>常用命令</strong></p></blockquote><table><thead><tr><th>命令</th><th>说明</th></tr></thead><tbody><tr><td>chkconfig –list</td><td>列出所有的系统服务</td></tr><tr><td>mkdir xxx</td><td>在当前位置新建文件夹 xxx</td></tr><tr><td>kill -9 pid</td><td>杀死 pid 的进程</td></tr><tr><td>firewall-cmd –state</td><td>查看防火墙状态</td></tr><tr><td>systemctl start firewalld.service</td><td>开启防火墙</td></tr><tr><td>systemctl stop firewalld.service</td><td>关闭防火墙</td></tr><tr><td>mv xx.text &#x2F;home&#x2F;xx</td><td>移动文件到指定目录下</td></tr><tr><td>systemctl start mysqld</td><td>启动mysql服务</td></tr><tr><td>systemctl stop mysqld</td><td>关闭mysql服务</td></tr><tr><td>systemctl restart mysqld</td><td>重启mysql服务</td></tr><tr><td>ls -l</td><td>查看当前路径的所有文件以及文件夹的权限</td></tr><tr><td>ps -ef</td><td>grep java</td></tr></tbody></table>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
