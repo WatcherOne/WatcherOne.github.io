@@ -23,12 +23,26 @@ table th:nth-of-type(3) {
 }
 </style>
 
+> 网址工具类
+
 | 地址   | 描述 | 补充 |
 | :---: | ------ | -------- |
 | [qr](https://link-to-qr.com/) | 一款在线制作二维码图 | 可以自定义url以及二维码样式颜色 |
 | [svg](https://editor.method.ac/) | 一款在线制作 svg 图 | 可以导入图片编辑也可以选择一些形状等 |
 | [flex](https://the-echoplex.net/flexyboxes/) | 一款在线可视化Flex布局效果实时展示 | 利于新手学习 |
+| [svg插图](https://undraw.co/) | 一个提供svg插图素材的网站 | 用于下载一些svg格式的素材 |
+| [API](https://overapi.com/) | 一个汇聚了大量开发语言和工具的API | 用于快速查看API文档,只有常用的 |
+| [正则表达式](https://ihateregex.io/) | 提供常用正则表达式的网站 | 可以修改正则来验证 |
+| [css-dev](https://cssbattle.dev/) | 一个CSS竞争性游戏类学习网站 | 通过css还原题目,具有竞争性 |
+
+> 插件类
+
+| 地址   | 描述 | 补充 |
+| :---: | ------ | -------- |
 | [print](https://printjs.crabbly.com/) | 一款打印pdf插件 | 未使用过 |
+
+> 娱乐类
+
 | [虚拟号码](https://sms-activate.org) | 外网虚拟号码服务平台 | 通过虚拟号码接收短信验证码 [详细](https://WatcherOne.github.io/2023/08/01/websiteVirtualPhone) |
 | [盗版游戏A](https://byrutdb.org) | `Byrutor`盗版游戏下载 | 一款来自俄罗斯的破解游戏资源网站 [详细](https://WatcherOne.github.io/2023/08/01/websiteGameALoad) |
 | [盗版游戏B](https://rutracker.net) | `RuTracker`盗版游戏下载 | 俄罗斯此前最大的的盗版资源下载网站 [详细](https://WatcherOne.github.io/2023/08/01/websiteGameBLoad) |
@@ -37,6 +51,7 @@ table th:nth-of-type(3) {
 | [openAI-chat](https://chat.openai.com) | chatGPT-chat网站 | 人工智能对话，需要翻墙 |
 | [openAI-doc](https://platform.openai.com) | openAI平台文档说明 | 提供用户登录等API文档，常用示例说明，需要翻墙+无痕 |
 | [openAI-api](https://api.openai.com) | api服务地址 | 提供后端接口的服务器，需要翻墙+无痕 |
+
 
 <div id="gitalk-container"></div>
 
