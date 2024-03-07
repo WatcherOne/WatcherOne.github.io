@@ -72,6 +72,11 @@ table th:nth-of-type(3) {
             <td><span style="color:lightblue">常用脚本推荐</span></td>
             <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=1518a3ca-e7ed-4c49-8bef-362959e2d5fc" target="_blank">全网VIP视频去广告</a></td>
         </tr>
+         <tr>
+            <td></td>
+            <td></td>
+            <td><a href="chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/ask.html?aid=3ec24542-bf76-4e24-b0b0-f7b017ea7432" target="_blank">去除 搜索结果 广告</a></td>
+        </tr>
         <tr>
             <td></td>
             <td></td>
