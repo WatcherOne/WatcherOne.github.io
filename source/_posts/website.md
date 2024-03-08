@@ -34,8 +34,8 @@ table th:nth-of-type(3) {
 | [API](https://overapi.com/) | 一个汇聚了大量开发语言和工具的API | 用于快速查看API文档,只有常用的 |
 | [正则表达式](https://ihateregex.io/) | 一个提供常用正则表达式的网站 | 可以修改正则来验证 |
 | [css-dev](https://cssbattle.dev/) | 一个针对CSS爱好者的代码高尔夫游戏网站 | 以用最小的CSS代码直观地还原题目 |
-| [wetools](https://www.wetools.com) | 一个在线工具大全的网站 | 提供了很多了好用的工具，如: 加解密，代码转换压缩 ｜
-| [toolul](https://tool.lu) | 一个在线工具大全的网站 | 提供了很多了好用的工具，如: 格式化，IP查询等 ｜
+| [wetools](https://www.wetools.com) | 一个在线工具大全的网站 | 提供了很多了好用的工具，如: 加解密，代码转换压缩 |
+| [toolul](https://tool.lu) | 一个在线工具大全的网站 | 提供了很多了好用的工具，如: 格式化，IP查询等 |
 
 > 工具插件类
 
