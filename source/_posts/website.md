@@ -36,7 +36,7 @@ table th:nth-of-type(3) {
 | [css-dev](https://cssbattle.dev/) | 一个针对CSS爱好者的代码高尔夫游戏网站 | 以用最小的CSS代码直观地还原题目 |
 | [wetools](https://www.wetools.com) | 一个在线工具大全的网站 | 提供了很多了好用的工具，如: 加解密，代码转换压缩 |
 | [toolul](https://tool.lu) | 一个在线工具大全的网站 | 提供了很多了好用的工具，如: 格式化，IP查询等 |
-| [toolul](https://draw.moyu.io) | 一个强大简洁的在线的绘图网站 | 支持流程图，UML图，架构图，原型图等图标 |
+| [draw.moyu.io](https://draw.moyu.io) | 一个强大简洁的在线的绘图网站 | 支持流程图，UML图，架构图，原型图等图标 |
 
 > 工具插件类
 
