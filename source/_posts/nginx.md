@@ -22,7 +22,8 @@
 4. 启动 `nginx` 服务
 
     ```shell
-    nginx -t [-c /etc/nginx/nginx/conf]  # 查看nginx配置文件是否正确
+    nginx -t
+    nginx -t -c /etc/nginx/nginx.conf  # 查看nginx配置文件是否正确
     
     start nginx
     systemctl start nginx    # 两种方式都可以
