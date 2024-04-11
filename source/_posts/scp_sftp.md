@@ -32,3 +32,4 @@ scp -r /documents/web root@ip:/usr/documents
 | 下载 | get /usr/local/a.text /documents | 前为服务器路径，后为本地下载路径 |
 | 上传 | put /documents/a.text /usr/local  | 前为本地上传文件路径`如果找不到文件路径，直接拖动文件到终端`，后为服务器路径 |
 | 文件夹时 | -r | get/put 后面加 -r |
+| 文件夹上传时 | -r | 本地的文件夹 在远程必须要有相同名的文件夹 put -r /testFolder /home // 则在home文件夹中必须要有testFolder同名文件名才可以上传  |
