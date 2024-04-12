@@ -105,7 +105,7 @@ table th:nth-of-type(3) {
 | [openAI-chat](https://chat.openai.com) | chatGPT-chat网站 | 人工智能对话，需要翻墙 |
 | [openAI-doc](https://platform.openai.com) | openAI平台文档说明 | 提供用户登录等API文档，常用示例说明，需要翻墙+无痕 |
 | [openAI-api](https://api.openai.com) | api服务地址 | 提供后端接口的服务器，需要翻墙+无痕 |
-
+| [布谷鸟](https://www.bugutv.org/) | 4K电影 | 需要翻墙使用，只有部分可下载的电影 | 
 
 <div id="gitalk-container"></div>
 
