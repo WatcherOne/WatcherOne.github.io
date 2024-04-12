@@ -42,7 +42,7 @@ table th:nth-of-type(3) {
 
 | 地址   | 描述 | 补充 |
 | :---: | ------ | -------- |
-| [print](https://printjs.crabbly.com/) | 一款打印pdf的插件 | 未使用过 |
+| [print](https://printjs.crabbly.com/) | 一款打印pdf的插件 | 未使用过, 可以将JSON数据导为表格的PDF |
 
 > chrome浏览器插件
 
